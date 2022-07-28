@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS CheatSheet project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+</head>
+<body>
+   <nav class="navbar">
+      <img src="logo.png" alt="logo" class="logo">
+      <div class="contentName"> This is Javascript CheatSheet </div>
+   </nav>
+
+    <div class="Container">
+       <ol>
+          <li><b>console.log :</b> This is console.log session
+               <pre class="language-js"><code> console.time("this is table method.")
+   console.log("this is console.log session.")
+   console.log(23+2);
+   console.log(true);
+   console.log(["biplab","pritam","subrato"]);
+   console.log({name:"Biplab",
+               roll:53,
+               learn:"javascript"
+   });
+
+   console.table({name:"Biplab",
+   roll:53,
+   learn:"javascript"
+   })
+
+   console.warn("This is a warning.");
+   // console.clear();
+
+   console.timeEnd("your code took");
+
+   console.assert(5<2, "this is assert method");
+
+   console.time();
+   for (let i = 0; i < 500; i++) {
+   console.log(i);
+   }
+   console.timeEnd();
+
+   console.error("this is my error line");
+
+
+   for (let i = 0; i < 222; i++) {
+   console.count(i)    
+   }
+
+   console.group("simple")
+   console.log("grouped");
+   console.log("grouped");
+   console.log("grouped");
+   console.log("grouped");
+   console.groupEnd("simple");
+
+   const spacing ="8px";
+   const myStyle = `padding:${spacing}; font-size:12px; color:red;`;
+
+   console.log("%cBIPLAB",myStyle);
+
+
+ </code></pre>
+          </li>
+
+
+
+          <li><b>javascript variable :</b>  
+   <pre class="language-js"><code>console.log("This is javascript variable session");
+
+   // Var
+   var name="Biplab";
+   var roll =53;
+   var devoloper = true;
+   // var location = null;
+   var task;
+
+   console.log(name,roll,devoloper,task);
+
+
+
+
+
+   //Let
+   let name="Biplab";
+   let roll =53;
+   let devoloper = true;
+   let task;
+   // let roll = 23;  //let use korle aec namer variable dobabar declear kora jabe na
+   console.log(name,roll,devoloper,task);
+
+
+
+
+   //Const
+   const Names="Biplab";
+   const roll =53;
+   const devoloper = true;
+         //  devoloper = false;  //const use kore variable ke overwrite kora jai na var and let er moto
+   // const task;  //const use korle aec namer variable dobabar declear kora jabe na
+
+   console.log(Names,roll,devoloper);
+
+
+
+
+
+
+
+
+   var Name = "biplab";
+   var roll;
+   var learn;
+   roll = 53;
+   learn = "javascript";
+   console.log(Name,roll,learn);
+
+
+   let city = "kolkata";  //global vabe variable declear kora holo
+   console.log(city); 
+
+
+   const userName = "Biplab";
+         //   userName = "kaushik"; //const use kore eta kora jabe na
+   console.log(userName);
+
+
+
+      {
+         let city = "Delhi";  //Eta local vabe variable declear kora holo. Mane eai variable ta eai object er modhye use kora  
+            city = "Rampur"
+         console.log(city);
+      }
+      console.log(city); //result e kolkata dekhache karon "city" global declear kora roheche
+
+
+
+      let arr = [2,3,4,5,6];
+      arr.push(234)
+      arr.unshift(34)
+
+      console.log(arr);
+
+
+              
+            </code></pre></li>
+
+
+          <li><b> Data type :</b>
+   <pre class="language-js"><code>console.log('This is my data type session');
+
+   /* Data type:
+   1. Primitive data type 
+   2. Reference data type 
+   */
+
+   // 1. Primitive data type 
+   //String
+   let name = "Biplab";
+   console.log(name,": "+"Data type is " + (typeof name));
+
+
+   //Number
+   let age =18;
+   console.log(age,": "+"Data type is " + (typeof age));
+
+
+   //Boolean
+   let isDriver = true;
+   console.log(isDriver,": "+"Data type is " + (typeof isDriver));
+
+
+   //Null
+   let nullvar = null;
+   console.log(nullvar,": "+"Data type is " + (typeof nullvar));
+
+
+   //undefined
+   let undef = undefined;
+   console.log(undefined,": "+"Data type is " + (typeof undefined));
+
+
+
+
+   // 2. Reference data type 
+   //  Array
+   let arr = [2,3,4,5,6,false,"string"];
+   console.log(arr,": "+"Data type is " + (typeof arr));
+
+
+   // Object literals
+   let obj ={
+   name:"Biplab",
+   roll:53,
+   learn:"Javascript"
+   }
+   console.log(obj,": "+"Data type is " + (typeof obj));
+
+
+
+   // function
+   function func1() {
+
+   }
+   console.log(func1,": "+"Data type is " + (typeof func1));
+
+
+   // Date
+   let date = new Date();
+   console.log(date,": "+"Data type is " + (typeof date));
+
+            </code></pre>
+         </li>
+          
+
+
+          <li><b>Type conversion and type coercion :</b>
+   <pre class="language-js"><code>console.log("This is type conversion and type coercion");
+
+      // Number Conversion
+      // let num;
+      
+      //   num = Number("234");
+      //  console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      // num = Number(true);
+      // num = Number(false);
+      // console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      
+      // num = Number("");
+      // console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      // num = Number("string");
+      // console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      // num = Number(undefined);
+      // console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      
+      
+      
+      
+      // Boolean Conversion
+      // let bool;
+      // bool = Boolean(1);
+      // console.log(bool+" = "+"Type is"+": "+(typeof bool));
+      
+      // bool = Boolean(0);
+      // console.log(bool+" = "+"Type is"+": "+(typeof bool));
+      
+      // bool = Boolean("string");
+      // console.log(bool+" = "+"Type is"+": "+(typeof bool));
+      
+      // bool = Boolean("");
+      // console.log(bool+" = "+"Type is"+": "+(typeof bool));
+      
+      
+      
+      
+      
+      
+      // String Conversion
+      // let str;
+      // let a = 90;
+      
+      //  str = String(a)
+      //  console.log(str+" = "+"Type is"+": "+(typeof str));
+      
+      //  str.toString();  //toSring methodaeibhabe likte hoi
+      //  console.log(str+" = "+"Type is"+": "+(typeof str));
+      
+      
+      
+      
+      
+      
+      // String Conversion
+      //  let str;
+      //  str = 3+"4";
+      //  console.log(str);
+      
+      //  str = 23+true;
+      //  console.log(str);
+      
+      // str = '0' + null;
+      // console.log(str);
+      
+      
+      
+      //Number Conversion
+      // let num;
+      
+      //  num = '4'+'4';
+      // console.log(num);
+      
+      // num = '4'*5;
+      // console.log(num);
+      
+      // //null Conversion
+      // let bool = '5'-true;
+      // console.log(bool);
+      
+      
+      
+      
+      
+      
+      // Type Coversion
+      // String
+      let str;
+      str = String(12);
+      console.log(str+" = "+"Type is"+": "+(typeof str));
+      
+      str = String(true);
+      console.log(str+" = "+"Type is"+": "+(typeof str));
+      
+      str = String(new Date());
+      console.log(str+" = "+"Type is"+": "+(typeof str));
+      
+      str = String([2,3,1,5,8]);
+      console.log(str+" = "+"Type is"+": "+(typeof str));
+      
+      str =23;
+      
+      str= str.toString();
+      console.log(str+" = "+"Type is"+": "+(typeof str));
+      
+      
+      
+      
+      
+      //  Number
+      let num;
+      num = Number("2763");
+      console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      num = Number(true);
+      console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      num = Number([1,2,3,4,5]);
+      console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      num = parseFloat('23.623578');
+      // num = parseInt('23.623578');
+      console.log(num+" = "+"Type is"+": "+(typeof num));
+      
+      console.log(num.toFixed(3),(typeof num));
+      
+      
+      
+      
+      
+      //Type Coercion
+      let myStr = Number("452");
+      let myNum = 32;
+      
+      console.log(myStr + myNum);</code></pre>
+         </li>
+          
+
+
+          <li><b>String property,method and template literals :</b>
+<pre class="language-js"><code>console.log("Javascript String property,method and template literals");
+
+   // charAt method
+   // let myString = "Javascript!!";
+   // console.log(myString.charAt(10)); // "charAt" method kono string er index onujai charactar diye dei
+   
+   
+   // concat method
+   // let str1 = "Javascript ";
+   // let str2 = str1.concat("is awesome");  //"concat" method duto string ke jure dei
+   // console.log(str2);
+   
+   
+   // indexOf method
+   // let str1 = "Hi my name is biplab";
+   // let str2 = str1.indexOf("is"); 
+   //  str2 = str1.indexOf("hfie"); //charecter na powya gele "-1" dekabe
+   //  console.log(str2);
+   
+   
+   //  Slice method
+   // let text = "Good Morning";
+   //  let str = text.slice(0,4); //"slice" method starting and ending number nai and string er modhye diye index anujai charecter diye dai
+   //  console.log(str);
+   
+   
+   //Split method
+   //  let txt = "a,b,c,d,e";
+   // let splt = txt.split(","); //split method kono string ke array te convert kore
+   // console.log(splt);
+   // console.log(splt[1]);
+   
+   
+   //subString method
+   // let str1 = "My name is biplab";
+   // let str2 = str1.substring(0,2);
+   // console.log(str2); 
+   
+   
+   //toLowerCase method
+   //  let text = "PRITAM";
+   // let text2 = text.toLowerCase();
+   // console.log(text2);
+   
+   //toUpperCase method
+   // let text = "biplab";
+   // let text2 = text.toUpperCase();
+   // console.log(text2);
+   
+   
+   // search method 
+   // let str1 = "My name is biplab";
+   // let str2 = str1.search("name"); //search method string er modhye value ta koto number position e ache seta diye dei
+   // console.log(str2);
+   
+   
+   // substr method 
+   //  let str1 = "Apple,Banana,Mango";
+   //  let str2 = str1.substr(1,4); //slice and substr method smiler
+   //  console.log(str2);
+   
+   
+   
+   // let fName = "Biplab";
+   // let lName = "Mondal";
+   // let greeting = `Welcome to ${fName} ${lName}`
+   // console.log(greeting);
+   
+   
+   // let html = `<h1>This is a heading.</h1>
+   //             <p>This is my para.</p>`;
+   
+   // console.log(html.length);     
+   // console.log(html.toUpperCase());  
+   // console.log(html[1]);     
+   // console.log(html.indexOf(">"));     
+   // console.log(html.lastIndexOf(">"));     
+   // console.log(html.charAt(3));
+   // // console.log(html.endsWith(">jdcfh"));
+   // console.log(html.endsWith(">"));
+   // console.log(html.includes(">"));
+   // console.log(html.substring(1,6));
+   // console.log(html.slice(0,4));
+   // console.log(html.split(" "));
+   // console.log(html.replace("This","It"));
+   // console.log(html.replaceAll("This","It"));
+   
+   
+   let name = "Biplab";
+   let fruits1 = "Orange";
+   let fruits2 = "Mango";
+   let myHtml = `Hello ${name}
+      <h1>This is my heading</h1>
+      <p>You like ${fruits1} and ${fruits2}
+   `;
+   document.body.innerHTML = myHtml;</code></pre>
+         </li>
+          
+
+
+          <li><b>ARRAY AND OBJECT :</b>
+<pre class="language-js"><code>console.log('welcome to tut7');
+   // ARRAY AND OBJECT IN JAVASCRIPT
+   
+   let marks = [12,23,34,45,56,67,78];
+   let name = ['Biplab','Pritam','sahin','subrata'];
+   let mixed = ['biplab',53,true,[2,3,4,5,6]];
+   let arr = new Array(276,89,09,56,43); // new metnod use korle  natun array toiri hoi
+   console.log(marks);
+   
+   console.log(marks[3]);
+   console.log(name);
+   console.log(mixed);
+   console.log(arr);
+   console.log(name.length);
+   console.log(Array.isArray(name)); // Array.isArray method  excecute kore je eta array kina ?
+   arr[0] = 'Biplab';
+   let arrelement = arr[0];
+   
+   console.log('element:', arrelement);
+   console.log(arr);
+   let valueIndex = marks.indexOf(34);
+   console.log(valueIndex);
+   
+   // Mutating or Modifying  Arrays
+   marks.push('biplab');
+   marks.unshift('kaushik');
+   marks.pop();
+   marks.shift();
+   marks.splice(1,3);
+   marks.reverse();
+   console.log(marks);
+   
+   
+   let marks2 = [123,432,56677];
+   marks = marks.concat(marks2);
+   console.log(marks);
+   
+   
+   
+   // Object
+   let myObj = {
+      firstName:'Biplab',
+      age:18,
+      isActive:true,
+      mark:[90,65,54,5443]
+   }
+   
+   console.log(myObj);
+   console.log(myObj.age);
+   
+        
+          </code></pre>
+         </li>
+          
+
+
+          <li><b>IF ELSE AND SWITCH :</b>
+   <pre class="language-js"><code>console.log('This is tutorial 8');
+      // IF ELSE AND SWITCH IN JAVASCRIPT 
+   
+   //if condition
+   /* if (5>0) {
+         console.log('5 is greater than 0');
+      }
+   if (5<0) {
+         console.log('5 is less than 0');
+   }
+      */
+   
+   
+   
+      
+      // else condition
+      let salary = 500;
+   
+   /*if (salary>1000) {
+         console.log('salary is greater than 1000');
+   }
+   else{
+      console.log('salary is less than 1000');
+   }
+      */
+   
+   
+   
+   
+   // else if condition
+   /* if (salary>1000) {
+         console.log('salary is greater than 1000');
+      } 
+      else if(salary<1000){
+         console.log('salary is less than 1000');
+      }
+      else {
+         console.log('salary is equal to 1000');
+      }
+      */
+   
+   
+   
+   //  JavaScript if else shortcut: ternary operator:-
+   //   console.log(5>0?  'greater': 'smaller');
+   
+   
+      
+   
+   
+   
+   
+   let age = 28;
+   let isDrive = true;
+   // let vari = 35;
+   
+   //  if (age==18) {
+   //      console.log('age is 18');
+   //  } 
+   
+      
+   
+   // if (age !== 18) {
+   // console.log('age is not 18')
+   // } 
+   // else {
+   // console.log('age is  18');
+         
+   // }
+   
+   
+   
+   
+   // if (typeof vari !== 'undefined' ) {
+   //     console.log('vari is defined')
+   // } else {
+   //     console.log('vari is not defined');
+   // }
+   
+   
+   
+   
+   // if (isDrive || age>18 ) {
+   //     console.log('you can drive');
+         
+   // } else {
+   //     console.log('you can not drive');
+         
+   // }
+   
+   
+   
+   
+   // console.log(age<45? 'age is 45': 'age is not 45');
+   
+   
+   
+   
+   // switch statement
+      switch (age) {
+         case 18:
+               console.log('age is 18');
+               break;
+         case 28:
+               console.log('age is 28');
+               break;
+         case 38:
+               console.log('age is 38');
+               break;
+         default:
+            console.log('age is working');
+               break;
+      }
+   
+         
+         
+         
+         
+         </code></pre>
+         </li>
+          
+
+
+          <li><b>LOOPS :</b>
+<pre class="language-js"><code>console.log('welcome to tut9');
+   //LOOPS IN JAVASCRIPT
+   
+   //  for (let i = 0; i < 100; i++) {
+   //      console.log(i);
+   
+   //  }
+   
+   
+   
+   //   let person = {
+   //      name:'biplab',
+   //      age:18,
+   //      hobby:'programming'
+   //   }
+   // for (let key in person) {
+   //     console.log(key + '=' +person[key]);
+   // }
+   
+   
+   
+   
+   // let arr = [2,3,4,5,6,9];
+   //  for (let i = 0; i < arr.length; i++) {
+   //      console.log(arr[i]);     
+   //  }
+   
+   
+   
+   
+   //while loop
+   //  let j = 0;
+   //  while (j<100) {
+   //     console.log(j+1);     
+   //      j++;
+   //  }
+   
+   
+   
+   
+   //Do while loop
+   // let k = 0;
+   // do {
+   //     console.log(k);
+   //     k++;
+   // } while (k < 100);
+   
+   
+   
+   //breaking a loop
+   //  for (let i = 0; i < 100; i++) {
+   //     console.log(i);
+   //     if (i==90) {
+   //         break;
+   //     }
+   //  }
+   
+   
+   
+   // console.log(1);
+   // console.log(2);
+   // console.log(3);
+   
+   //for loop
+   // for (let i = 0; i < 50; i++) {
+   // console.log(i);   
+   // }
+   
+   
+   //while loop
+   //  let i = 0;
+   //  while (i<50) {
+   //    console.log(i);
+   //    i++;    
+   //  }
+   
+   
+   
+   //do while loop
+   // let i=0;
+   //  do {
+   //    console.log(i);
+   //     i++;  
+   //  } while (i<30);
+   
+   
+   
+   // let arr = [2,3,4,5,6,7,8,9];
+   //  for (let i = 0; i < arr.length; i++) {
+   //   console.log(arr[i]);     
+   //  }
+   
+   
+   // arr.forEach(function(element,index,array) {
+   //     console.log(element,index,array);
+   // });
+   
+   
+   
+   
+   // for in loop
+   //  let obj ={
+   //     name:'biplab',
+   //     age:18,
+   //     learn:'javascript'
+   //  }
+   
+      // for in loop korar jonno object darkar hoi
+   //   for (const key in obj) {
+   //         console.log(key + ' value is ' + obj[key]);           
+   //       }
+   
+   
+   
+          
+          </code></pre>
+         </li>
+          
+
+
+          <li><b>FUNCTION :</b>
+   <pre class="language-js"><code>console.log('welcome to tut10');
+      //FUNCTION IN JAVASCRIPT 
+   
+      //Function Declaration:-
+   //   function printMessage(gret) {
+   //       console.log(gret);
+   //   }
+   //  printMessage('Good Morning');
+   
+   
+   
+   
+   // Function expressions
+   //  let add = function(a,b){
+   //      return a+b;    // return  use korar fole return er value ta add namok function er modhye chole giyeche
+   //  }
+      // console.log(add(2,3));
+   
+   
+   
+   
+   // Function Declaration:-
+   //    function getDistance(speed,time){
+   //       let dist = speed*time;
+   //       return dist;   //return    use korar fole return er value ta getDistance  namok function er modhye chole giyeche
+   //   }
+      //let getDist = getDistance(10,5);   //return   use korle function ta  ecta variable er modhye store korte hoi  and tarpor print korte hoi 
+      //  console.log(getDist);
+   
+   
+   
+   //  function diye return value 
+   // const gretMessage = function(name,thank='Thank you') {
+   //      let msg = `Happy birthday ${name}  How I wish I could fly to you right now and be with you on this special day of yours. But remember, my good wishes are always there with you. ${thank}!`;
+         
+   //      return msg;
+   // }
+   //  let name = 'Pritam';
+   //  let name2 = 'sahin';
+   //  let gret = gretMessage(name,'Thank a lot ');
+   //  console.log(gret);
+   
+   
+   
+   
+   //    Object diye return value
+   //   let obj = {
+   //     name:'Biplab',
+   //     game:function(){
+   //         return 'GTA';
+   //     }
+   //   }
+   //   console.log(obj.game());
+   
+   
+   
+   // let arr = ["Biplab","Pritam","Subrata","Sahin"];
+   // arr.forEach(function(element,index,array){
+   //      console.log(element,index);
+   //   });
+   
+      
+   
+   
+   
+   
+   // scope
+      if (1) {
+   //   var i = 50;  //ekhane var variable use korle global scope toiri hoi
+      let i = 50;
+      }
+      
+   
+      function gret() {
+         let i = 8;
+         console.log(i);
+      }
+      
+           
+      
+         </code></pre>
+         </li>
+          
+
+
+          <li><b>WINDOW OBJECT :</b>
+   <pre class="language-js"><code>console.log('welcome to tut11'); 
+      //WINDOW OBJECT 
+   
+   let a = window;
+   //  alert('Hello biplab')
+   //  a = prompt('this is will destroy your computer and ener your your name');
+   //  a = confirm('Are you ok');
+   //  a = innerHeight;  
+   // a = innerWidth;
+   //  a = scrollX; 
+   // a = scrollY; 
+   //  a= location.reload; //location.reload() page ke reload kore
+   // a = location.href;   //location.href page er url diye dai
+   //  a = location.href = '//codewithharry.com';   //location.href= url(je kone page er)   diye dile  sei page e chole jai
+   //  a = location.toString();
+   //  a = window.history;
+      a = history.go(-1);  //eta browser er console dekte hobe
+   
+      console.log(a)
+   
+
+        </code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+          <li><b></b>
+         <pre class="language-js"><code></code></pre>
+         </li>
+          
+
+
+
+
+         
+
+       </ol>
+    </div>
+</body>
+</html>
